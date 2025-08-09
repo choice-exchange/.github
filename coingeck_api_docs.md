@@ -85,7 +85,7 @@ The `/historical_trades` endpoint provides recently completed trades for a given
 | -------------- | --------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | `ticker_id`    | string    | **Mandatory**| The contract address for the pair (e.g., `inj1d5xuqkrj8kwqvwyxss4q5w0dkduywqq3uucv87`).                                                                  |
 | `type`         | string    | Optional     | Filters trades by type. Can be `buy` or `sell`. If omitted, both types are returned.                                                       |
-| `limit`        | integer   | Optional     | The maximum number of recent trades to retrieve. Defaults to `100` if not provided.                                                        |
+| `page`        | integer   | Optional     | The page number.
 | `start_time`   | integer   | Optional     | A Unix timestamp (seconds) to specify the start of the time range for the query.                                                           |
 | `end_time`     | integer   | Optional     | A Unix timestamp (seconds) to specify the end of the time range for the query.                                                             |
 
@@ -112,7 +112,10 @@ GET https://api.choice.exchange/api/coingecko/historical_trades?ticker_id=inj1d5
 **Response**:
 ```json
 {
-    "buy": [
+    "count": 2,
+    "next": null,
+    "previous": null,
+    "results": [
         {
             "trade_id": 1258016010267,
             "price": "14.196770938718858475",
@@ -129,7 +132,6 @@ GET https://api.choice.exchange/api/coingecko/historical_trades?ticker_id=inj1d5
             "trade_timestamp": 1752978890668,
             "type": "buy"
         }
-    ],
-    "sell": []
+    ]
 }
 ```
