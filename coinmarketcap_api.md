@@ -4,7 +4,7 @@ This document provides the necessary technical API documentation for CoinMarketC
 
 ## General Information
 
-*   **API Base URL**: `https://api.choice.exchange/api/coinmarketcap/`
+*   **API Base URL**: `https://api.choice.exchange/api/v1/coinmarketcap/`
 *   **Authentication**: No authentication is required for any of the public market data endpoints.
 *   **Data Format**: All endpoints return data in JSON format.
 *   **Pagination**: Endpoints do not use pagination and return the complete dataset in a single response, as required.
@@ -27,7 +27,7 @@ Provides a high-level overview of market data for all trading pairs on the excha
 
 *   **Endpoint**: `/summary`
 *   **Method**: `GET`
-*   **Sample URL**: `https://api.choice.exchange/api/coinmarketcap/summary`
+*   **Sample URL**: `https://api.choice.exchange/api/v1/coinmarketcap/summary`
 
 #### Response Object
 
@@ -80,7 +80,7 @@ Provides a detailed summary for each currency available for trading on the excha
 
 *   **Endpoint**: `/assets`
 *   **Method**: `GET`
-*   **Sample URL**: `https://api.choice.exchange/api/coinmarketcap/assets`
+*   **Sample URL**: `https://api.choice.exchange/api/v1/coinmarketcap/assets`
 
 #### Response Object
 
@@ -118,7 +118,7 @@ Provides a 24-hour pricing and volume summary for all market pairs, formatted ac
 
 *   **Endpoint**: `/ticker`
 *   **Method**: `GET`
-*   **Sample URL**: `https://api.choice.exchange/api/coinmarketcap/ticker`
+*   **Sample URL**: `https://api.choice.exchange/api/v1/coinmarketcap/ticker`
 
 #### Response Object
 
@@ -164,7 +164,7 @@ Returns recently completed trades for a given market pair.
 *   **Method**: `GET`
 *   **Note**: The `market_pair` parameter must be constructed using the contract addresses of the two assets, separated by a single underscore. e.g., `BASE_ADDRESS_QUOTE_ADDRESS`.
 
-*   **Sample URL**: `https://api.choice.exchange/api/coinmarketcap/trades/inj_peggy0xdAC17F958D2ee523a2206206994597C13D831ec7`
+*   **Sample URL**: `https://api.choice.exchange/api/v1/coinmarketcap/trades/inj_peggy0xdAC17F958D2ee523a2206206994597C13D831ec7`
 
 #### Response Object
 
